@@ -1,0 +1,10 @@
+
+            {% extends "layout.html" %}
+            {% block content %}
+        <div class="inner">
+            <form action="/barrPath" method="post" enctype="multipart/form-data",style="text-align:center">
+                    <input type="file" name="data_file" />
+                    <input type="submit" value="See your data"/>
+                </form>
+        </div>
+            {% endblock %}

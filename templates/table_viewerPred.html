@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Outputs</title>
+</head>
+<style>
+    table.dataframe, .dataframe th, .dataframe td {
+  border: none;
+  border-bottom: 1px solid #C8C8C8;
+  border-collapse: collapse;
+  text-align:left;
+  padding: 10px;
+  margin-bottom: 40px;
+  font-size: 0.9em;
+  max-width: 150px;
+}
+
+
+</style>
+<body>
+{% extends "layout.html" %}
+            {% block content %}
+
+{% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+{% endfor %}
+
+<button style="background-color: blue;" type="button">
+Download the data
+</button>
+
+{% endblock %}
+</body>
+</html>

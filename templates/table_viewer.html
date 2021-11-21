@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table view</title>
+</head>
+<style>
+    table.dataframe, .dataframe th, .dataframe td {
+  border: none;
+  border-bottom: 1px solid #C8C8C8;
+  border-collapse: collapse;
+  text-align:left;
+  padding: 10px;
+  margin-bottom: 40px;
+  font-size: 0.9em;
+  max-width: 150px;
+}
+
+
+</style>
+<body>
+{% extends "layout.html" %}
+            {% block content %}
+<div class="inner">
+<form action="/barrPathPredict" method="post" enctype="multipart/form-data">
+                    <input type="submit" value="Predict pathology"/>
+                </form>
+</div>
+{% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+{% endfor %}
+
+{% endblock %}
+</body>
+</html>
